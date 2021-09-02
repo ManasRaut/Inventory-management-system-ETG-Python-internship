@@ -1,9 +1,11 @@
 import json
 import time
+from cli import CLI
 
 class Inventory():
     def __init__(self):
         self.records = []
+        self.cli  = CLI()
     
     def log(self, res, order):
         fh = open("history.log", "a")
@@ -81,8 +83,10 @@ class Inventory():
             itm["price"] = int(input("Enter price: ") or itm["price"])
             itm["qty"] = int(input("Enter current stock: ") or itm["qty"])
             self.update_records()
+            self.log("ITEM_STOCKED_UP", itm)
+            self.cli.success("\nSuccessfully stocked up")
         else:
-            print("No such item exists")
+            self.cli.failed("\nNo such item exists")
     
     def add_new_item(self, itm):
         self.read_records()
@@ -90,6 +94,5 @@ class Inventory():
             if item["id"] == itm["id"]:
                 return False
         self.records.append(itm)
-        print(self.records)
         self.update_records()
         return True

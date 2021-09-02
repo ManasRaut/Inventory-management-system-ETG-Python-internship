@@ -16,65 +16,65 @@ Inventory Management System
 ---------------------------------------------------
 '''
 
-def printError():
-    print("\n*******ERROR******\n")
-
 inventory = Inventory()
 cli = CLI()
 cmd = -1
-# main while loop
 while cmd != 5:
-    print(dashboard)
+    cli.info(dashboard)
     cmd = int(input('> ') or -1)
 
     if cmd == 1:
         inventory.read_records()
-        id = input("Enter id: ")
+        id = input("\nEnter id: ")
         qty = int(input("Enter quantity: "))
         result, order = inventory.handle_order(id, qty)
 
-        if result == "OUTOFSTOCK": # done
-            print("Oops, sorry out of stock!!!")
+        if result == "OUTOFSTOCK": 
+            cli.failed("\nOops, sorry out of stock!!!")
             continue
-        elif result == "FEWINSTOCK": # done
-            print('''
+        elif result == "FEWINSTOCK": 
+            cli.info('''
             Requested items: {}
             Items in stock: {}
             '''.format(order["qty"], order["instock"]))
-            ans = input("Do you want to buy remaining {} items ? (Y or N): ".format(order["instock"]))
+            cli.focus("Do you want to buy remaining {} items ? (Y or N): ".format(order["instock"]))
+            ans = input()
             if ans == "N":
-                print("OK order cancelled")
+                cli.failed("\nOK order cancelled")
                 inventory.log("ORDER_CANCELED", order)
                 continue
             elif ans == "Y":
                 order["qty"] = order["instock"]
-        elif result == "NOITEMPRESENT": # incomplete
-            print("No Item Exists")
+        elif result == "NOITEMPRESENT": 
+            cli.failed("\nNo Item Exists")
             continue
 
         res = inventory.deduct_inventory(order)
         res &= inventory.update_records()
         inventory.log("ITEM_DEDUCTED", order)
         if res:
-            print(inventory.get_bill(order))
+            cli.info(inventory.get_bill(order))
+            cli.success("\nOrder successfull")
         else:
-            printError()
+            cli.error("\nERROR: Something occured while dedcuting inventory")
             
     elif cmd == 2:
         c = int(input("\n1. STock up existing item.\n2. Add new Item.\n\n> "))
         if c == 1:
-            id = input("Enter id: ")
+            id = input("\nEnter id: ")
             inventory.stockUp(id)
         elif c == 2:
             itm = {}
-            itm["id"] = input("Enter id: ")
+            itm["id"] = input("\nEnter id: ")
             itm["name"] = input("Enter Item name: ")
             itm["price"] = int(input("Enter price: ") or 100)
             itm["qty"] = int(input("Enter current stock: ") or "0")
             if itm["id"] and itm["name"]:
                 inventory.add_new_item(itm)
+                cli.success("\nAdded new item")
+                inventory.log("NEW_ITEM_ADDED", itm)
             else:
-                print("Please enter valid details")
+                cli.failed("\nPlease enter valid details")
     elif cmd == 3:
         os.startfile("history.log")
     elif cmd == 4:
@@ -87,9 +87,9 @@ while cmd != 5:
         fh.write(open("records.json", "r").read())
         fh.close()
         os.startfile(path+"\\"+name)
-        print("Saved inventory copy", path+"\\"+name)
+        cli.success("\nSaved inventory copy" + path+"\\"+name)
         inventory.log("INVENTORY_COPY_CREATED", {})
     else:
         pass
 
-print('\nExiting... ')
+cli.focus('\nExiting... \n')

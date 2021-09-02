@@ -1,14 +1,12 @@
 
-Thu Sep  2 09:22:05 2021| ITEM_DEDUCTED{'id': '50276', 'name': 'item 276', 'price': 2860, 'qty': 10, 'instock': 1522}
-Thu Sep  2 09:22:40 2021| ORDER_CANCELED{'id': '50276', 'name': 'item 276', 'price': 2860, 'qty': 56454654, 'instock': 1512}
-Thu Sep  2 09:22:49 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:39:17 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:40:38 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:40:59 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:46:28 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:46:52 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:47:23 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:47:52 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:48:29 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:48:47 2021| INVENTORY_COPY_CREATED{}
-Thu Sep  2 09:48:55 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 10:21:53 2021| ITEM_DEDUCTED{'id': '50275', 'name': 'item 275', 'price': 2850, 'qty': 10, 'instock': 2025}
+Thu Sep  2 10:22:27 2021| ORDER_CANCELED{'id': '50275', 'name': 'item 275', 'price': 2850, 'qty': 564654, 'instock': 2015}
+Thu Sep  2 10:22:35 2021| ITEM_DEDUCTED{'id': '50275', 'name': 'item 275', 'price': 2850, 'qty': 2015, 'instock': 2015}
+Thu Sep  2 10:23:25 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 10:24:19 2021| NEW_ITEM_ADDED{'id': '10000', 'name': 'MI 7', 'price': 5000, 'qty': 0}
+Thu Sep  2 10:24:22 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 10:25:12 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 10:25:32 2021| ITEM_STOCKED_UP{'id': '50276', 'name': 'Apple macbook air', 'price': 2860, 'qty': 200}
+Thu Sep  2 10:26:20 2021| ITEM_STOCKED_UP{'id': '50278', 'name': 'item 278', 'price': 10, 'qty': 4654}
+Thu Sep  2 10:26:28 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 10:26:46 2021| ITEM_DEDUCTED{'id': '50278', 'name': 'item 278', 'price': 10, 'qty': 10, 'instock': 4654}
