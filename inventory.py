@@ -1,8 +1,15 @@
 import json
+import time
 
 class Inventory():
     def __init__(self):
         self.records = []
+    
+    def log(self, res, order):
+        fh = open("history.log", "a")
+        logline = "\n" + time.ctime() + "| " + res + str(order)
+        fh.write(logline)
+        fh.close()
     
     def read_records(self):
         fh = open('records.json', "r")
@@ -61,3 +68,28 @@ class Inventory():
         '''.format("temp", order["id"], order["name"], order["price"], order["qty"], order["qty"] * order["price"])
 
         return bill
+
+    def stockUp(self, id):
+        self.read_records()
+        itm = None
+        for item in self.records:
+            if item["id"] == id:
+                itm = item
+                break
+        if itm:
+            itm["name"] = (input("Enter Item name: ") or itm["name"])
+            itm["price"] = int(input("Enter price: ") or itm["price"])
+            itm["qty"] = int(input("Enter current stock: ") or itm["qty"])
+            self.update_records()
+        else:
+            print("No such item exists")
+    
+    def add_new_item(self, itm):
+        self.read_records()
+        for item in self.records:
+            if item["id"] == itm["id"]:
+                return False
+        self.records.append(itm)
+        print(self.records)
+        self.update_records()
+        return True

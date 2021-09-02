@@ -25,7 +25,7 @@ cmd = -1
 # main while loop
 while cmd != 5:
     print(dashboard)
-    cmd = int(input('> '))
+    cmd = int(input('> ') or -1)
 
     if cmd == 1:
         inventory.read_records()
@@ -41,9 +41,10 @@ while cmd != 5:
             Requested items: {}
             Items in stock: {}
             '''.format(order["qty"], order["instock"]))
-            ans = input("Do you want to buy remaining {} items ? (Y or N)".format(order["instock"]))
+            ans = input("Do you want to buy remaining {} items ? (Y or N): ".format(order["instock"]))
             if ans == "N":
                 print("OK order cancelled")
+                inventory.log("ORDER_CANCELED", order)
                 continue
             elif ans == "Y":
                 order["qty"] = order["instock"]
@@ -53,15 +54,29 @@ while cmd != 5:
 
         res = inventory.deduct_inventory(order)
         res &= inventory.update_records()
+        inventory.log("ITEM_DEDUCTED", order)
         if res:
             print(inventory.get_bill(order))
         else:
             printError()
             
     elif cmd == 2:
-        pass
+        c = int(input("\n1. STock up existing item.\n2. Add new Item.\n\n> "))
+        if c == 1:
+            id = input("Enter id: ")
+            inventory.stockUp(id)
+        elif c == 2:
+            itm = {}
+            itm["id"] = input("Enter id: ")
+            itm["name"] = input("Enter Item name: ")
+            itm["price"] = int(input("Enter price: ") or 100)
+            itm["qty"] = int(input("Enter current stock: ") or "0")
+            if itm["id"] and itm["name"]:
+                inventory.add_new_item(itm)
+            else:
+                print("Please enter valid details")
     elif cmd == 3:
-        pass
+        os.startfile("history.log")
     elif cmd == 4:
         home = Path.home()
         name = (time.ctime() + ".json").replace(":", "-")
@@ -73,6 +88,7 @@ while cmd != 5:
         fh.close()
         os.startfile(path+"\\"+name)
         print("Saved inventory copy", path+"\\"+name)
+        inventory.log("INVENTORY_COPY_CREATED", {})
     else:
         pass
 
