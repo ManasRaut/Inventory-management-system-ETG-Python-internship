@@ -1,6 +1,7 @@
 # Inventory Management System
 
-<br>A CLI application which can manage inventory by taking orders, checking stock, managing stock.<br><br>
+<br>A CLI application which can manage inventory by taking orders, checking stock, managing stock.
+Application was made on windows 10 hence high chances of not working on another OS<br><br>
 
 ### Primary Goals
 
