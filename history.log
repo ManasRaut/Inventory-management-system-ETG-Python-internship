@@ -10,3 +10,18 @@ Thu Sep  2 10:25:32 2021| ITEM_STOCKED_UP{'id': '50276', 'name': 'Apple macbook 
 Thu Sep  2 10:26:20 2021| ITEM_STOCKED_UP{'id': '50278', 'name': 'item 278', 'price': 10, 'qty': 4654}
 Thu Sep  2 10:26:28 2021| INVENTORY_COPY_CREATED{}
 Thu Sep  2 10:26:46 2021| ITEM_DEDUCTED{'id': '50278', 'name': 'item 278', 'price': 10, 'qty': 10, 'instock': 4654}
+Thu Sep  2 16:50:58 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 16:51:27 2021| ITEM_DEDUCTED{'id': '50275', 'name': 'Samsung TV', 'price': 2850, 'qty': 10, 'instock': 500}
+Thu Sep  2 16:51:39 2021| ORDER_CANCELED{'id': '50275', 'name': 'Samsung TV', 'price': 2850, 'qty': 5000, 'instock': 490}
+Thu Sep  2 16:52:04 2021| ITEM_DEDUCTED{'id': '50275', 'name': 'Samsung TV', 'price': 2850, 'qty': 490, 'instock': 490}
+Thu Sep  2 16:52:32 2021| NEW_ITEM_ADDED{'id': '4568', 'name': 'Mi TV', 'price': 36000, 'qty': 100}
+Thu Sep  2 16:55:09 2021| ITEM_DEDUCTED{'id': '50276', 'name': 'Apple macbook air', 'price': 2860, 'qty': 10, 'instock': 200}
+Thu Sep  2 16:55:18 2021| ORDER_CANCELED{'id': '50276', 'name': 'Apple macbook air', 'price': 2860, 'qty': 564654, 'instock': 190}
+Thu Sep  2 16:55:28 2021| ITEM_DEDUCTED{'id': '50276', 'name': 'Apple macbook air', 'price': 2860, 'qty': 190, 'instock': 190}
+Thu Sep  2 16:55:40 2021| ITEM_STOCKED_UP{'id': '50275', 'name': 'Samsung TV', 'price': 2850, 'qty': 500}
+Thu Sep  2 16:55:57 2021| NEW_ITEM_ADDED{'id': '50999', 'name': 'MI TV', 'price': 36000, 'qty': 120}
+Thu Sep  2 16:56:02 2021| INVENTORY_COPY_CREATED{}
+Thu Sep  2 17:05:06 2021| ITEM_DEDUCTED{'id': '50275', 'name': 'Samsung TV', 'price': 2850, 'qty': 2, 'instock': 500}
+Thu Sep  2 17:05:19 2021| ORDER_CANCELED{'id': '50275', 'name': 'Samsung TV', 'price': 2850, 'qty': 4555, 'instock': 498}
+Thu Sep  2 17:05:50 2021| ITEM_STOCKED_UP{'id': '50275', 'name': '330', 'price': 5000, 'qty': 300}
+Thu Sep  2 17:05:54 2021| INVENTORY_COPY_CREATED{}

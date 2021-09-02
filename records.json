@@ -1,15 +1,15 @@
 [
     {
         "id": "50275",
-        "name": "Samsung TV",
-        "price": 2850,
-        "qty": 500
+        "name": "330",
+        "price": 5000,
+        "qty": 300
     },
     {
         "id": "50276",
         "name": "Apple macbook air",
         "price": 2860,
-        "qty": 200
+        "qty": 0
     },
     {
         "id": "50277",
@@ -64,5 +64,17 @@
         "name": "MI 7",
         "price": 5000,
         "qty": 0
+    },
+    {
+        "id": "4568",
+        "name": "Mi TV",
+        "price": 36000,
+        "qty": 100
+    },
+    {
+        "id": "50999",
+        "name": "MI TV",
+        "price": 36000,
+        "qty": 120
     }
 ]
