@@ -52,6 +52,16 @@ class Inventory():
         for item in self.records:
             if item["id"] == order["id"]:
                 item["qty"] = item["qty"] - order["qty"]
+                fh = open("sales.json", "r")
+                sales = json.loads(fh.read())
+                fh.close()
+                sale = order.copy()
+                sale["bill-amount"] = order["qty"] * order["price"]
+                sale["date-time"] = time.ctime()
+                sales.append(sale)
+                fh = open("sales.json", "w")
+                fh.write(json.dumps(sales, indent=4))
+                fh.close()
                 return True
         return False
 

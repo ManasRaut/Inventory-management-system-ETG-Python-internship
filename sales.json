@@ -1,0 +1,20 @@
+[
+    {
+        "id": "2076",
+        "name": "Item207.6",
+        "price": 207,
+        "qty": 20,
+        "instock": 990,
+        "bill-amount": 4140,
+        "date-time": "Sun Sep  5 18:08:54 2021"
+    },
+    {
+        "id": "2076",
+        "name": "Item207.6",
+        "price": 207,
+        "qty": 970,
+        "instock": 970,
+        "bill-amount": 200790,
+        "date-time": "Sun Sep  5 18:09:09 2021"
+    }
+]
