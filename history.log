@@ -6,3 +6,5 @@ Sun Sep  5 18:09:33 2021| NEW_ITEM_ADDED{'id': '1000', 'name': '"Iphone X"', 'pr
 Sun Sep  5 18:09:36 2021| INVENTORY_COPY_CREATED{}
 Sun Sep  5 18:10:30 2021| ITEM_STOCKED_UP{'id': '2076', 'name': 'Samsung S1 note', 'price': 207, 'qty': 150}
 Sun Sep  5 18:10:32 2021| INVENTORY_COPY_CREATED{}
+Mon Sep  6 09:23:04 2021| INVENTORY_COPY_CREATED{}
+Mon Sep  6 09:23:16 2021| ITEM_DEDUCTED{'id': '2076', 'name': 'Samsung S1 note', 'price': 207, 'qty': 10, 'instock': 150}

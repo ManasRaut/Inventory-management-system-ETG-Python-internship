@@ -23,7 +23,7 @@ Application runs in terminal with text colors to show success, faliures or error
 
 ## Application in Jupyter notebook
 
-Same Application source code is in Jupyter number in AppNoteBook.ipynb. It has same features as terminal application except it doesnt have text colors to highlight specific results. Saving sales in sales.json feature is not implemented
+Same Application source code is in Jupyter number in AppNoteBook.ipynb. It has same features as terminal application except it doesnt have text colors to highlight specific results.
 
 ## Output
 
